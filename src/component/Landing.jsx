@@ -1,41 +1,44 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import landing from "../assets/landing.png";
 
-function Landing(props) {
-  const [collections, setCollections] = useState([]);
-
-  async function getCollections() {
-    const { data } = await axios.get("https://fakestoreapi.com/products");
-    setCollections(data);
-  }
-  useEffect(() => {
-    getCollections();
-  }, []);
-
+function Landing() {
   return (
-    <section>
-      <div className="Feautured__sec-wrapper">
-        <div className="row">
-        <h1 className="section__title">Feautured <span className="orange">Items</span></h1>
-        <div className="items__wrapper">
-        {collections
-          .sort((a, b) => b.price - a.price)
-          .slice(0, 4)
-          .map((collection) => (
-            <div className="item__info" key={collection.id}>
-              <figure>
-                <img src={collection.image} alt="" />
-              </figure>
-              <h3 className="items__title">{collection.title}</h3>
-              <p className="items__info">{collection.category}</p>
-              <p className="items__info">${collection.price}</p>
-              </div>
-            
-          ))}
+    <div className="landing__wrapper">
+      <h1 className="langing__title">
+        The Best <span className="orange">Shop</span> for all your{" "}
+        <span className="orange">Needs</span>
+      </h1>
+      <h1 className="langing__title-2">
+        and <span className="orange">Desires</span>{" "}
+      </h1>
+      <div className="row">
+        <img className="landing__img" src={landing} alt="" />
+        <a href="/">
+          <div className="shirt"></div>
+        </a>
+        <a href="">
+          <div className="women__shirt"></div>
+        </a>
+        <a href="">
+          <div className="random"></div>
+        </a>
+        <a href="">
+          <div className="cart"></div>
+        </a>
+
+        <div class="loader">
+          <p>
+            <span className="orange">Categories:</span>{" "}
+          </p>
+          <div class="words">
+            <span class="word">Jewelery</span>
+            <span class="word">Women's clothing</span>
+            <span class="word">Men's clothing</span>
+            <span class="word">Electronics</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
