@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Link } from "react-router-dom";
 
 function Feautured() {
     const [collections, setCollections] = useState([]);
@@ -27,7 +28,9 @@ function Feautured() {
               .map((collection) => (
                 <div className="item__info" key={collection.id}>
                   <figure>
+                  <Link to={`/products/${collection.id}`} >
                     <img className="item__img" src={collection.image} alt="" />
+                  </Link>
                   </figure>
                   <div className="details__wrapper">
                     <h3 className="items__title">{collection.title}</h3>

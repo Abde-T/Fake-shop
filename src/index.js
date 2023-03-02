@@ -9,9 +9,10 @@ import {
   faCartShopping,
   faShop,
   faMoneyBill,
-  faHandsClapping
+  faHandsClapping,
+  faStar,faStarHalf
 } from "@fortawesome/free-solid-svg-icons";
-library.add(faHeart, faCartShopping, faShop, faMoneyBill, faHandsClapping);
+library.add(faHeart, faStar, faStarHalf, faCartShopping, faShop, faMoneyBill, faHandsClapping);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

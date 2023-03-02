@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 function Electronics(props) {
     const [collections, setCollections] = useState([]);
 
@@ -13,6 +14,26 @@ function Electronics(props) {
     getCollections();
   }, []);
 
+  function filterProducts(filterValue) {
+    if (filterValue === "LOW_TO_HIGH") {
+      setCollections(
+        collections
+          .slice()
+          .sort((a, b) => (a.price.sale || a.price) - (b.price.sale || b.price))
+      );
+    } else if (filterValue === "HIGH_TO_LOW") {
+      setCollections(
+        collections
+          .slice()
+          .sort((a, b) => (b.price.sale || b.price) - (a.price.sale || a.price))
+      );
+    } else if (filterValue === "RATING") {
+      setCollections(
+        collections.slice().sort((a, b) => b.rating.rate - a.rating.rate)
+      );
+    }
+  }
+
   return (
     <>
       {collections
@@ -23,7 +44,9 @@ function Electronics(props) {
               <figure>
                 <img className="catg__img" src={collection.image} alt="" />
               </figure>
+              <Link to={`/products/category/${collection.category}`} >
               <button className="catg__button">View More</button>
+              </Link>
             </div>
           </div>
         ))}

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Jewelery(props) {
     
@@ -26,7 +27,9 @@ function Jewelery(props) {
               <figure>
                 <img className="catg__img" src={collection.image} alt="" />
               </figure>
+              <Link to={`/products/category/${collection.category}`} >
               <button className="catg__button">View More</button>
+              </Link>
             </div>
           </div>
         ))}

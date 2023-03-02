@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function MensClothing(props) {
   const [collections, setCollections] = useState([]);
@@ -16,18 +17,16 @@ function MensClothing(props) {
 
   return (
     <>
-        {collections
-          .slice(0, 1)
-          .map((collection) => (
-            <div className="catg__wrapper">
-              <div className="catg__info" key={collection.id}>
-                <figure>
-                  <img className="catg__img" src={collection.image} alt="" />
-                </figure>
-                <button className="catg__button">View More</button>
-              </div>
-            </div>
-          ))}
+      {collections.slice(0, 1).map((collection) => (
+        <div className="catg__wrapper">
+          <div className="catg__info" key={collection.id}>
+            <img className="catg__img" src={collection.image} alt="" />
+            <Link to={`/products/category/${collection.category}`}>
+              <button className="catg__button">View More</button>
+            </Link>
+          </div>
+        </div>
+      ))}
     </>
   );
 }
