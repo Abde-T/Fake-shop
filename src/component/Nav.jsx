@@ -9,7 +9,9 @@ function Nav() {
             
             <div className='row'>
                 <div className='nav__wrapper'>
+                    <a href="/">
                     <img className='logo' src={logo} alt="" />
+                    </a>
                     <div className='nav__ele'>
                     <a href="/">Home</a>
                     <a href="/products">Explore</a>

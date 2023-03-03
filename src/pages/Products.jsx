@@ -99,15 +99,14 @@ function Products() {
                 type="button"
                 className="btn btn-danger"
               >
-                Load More 
+                Load More
               </button>
             )}
           </div>
         </div>
       </div>
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Footer />
     </>
   );
 }

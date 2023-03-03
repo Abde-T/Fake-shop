@@ -9,7 +9,6 @@ function Product({ collection, addToBasket }) {
   const { id } = useParams();
   const [collections, setCollections] = useState([]);
 
-
   async function getCollections() {
     const { data } = await axios.get(`https://fakestoreapi.com/products/${id}`);
     setCollections(data);
@@ -94,14 +93,14 @@ function Product({ collection, addToBasket }) {
                       <FontAwesomeIcon icon="heart" className="heart" />
                       {added ? (
                         <Link to="/basket">
-                        <button className="btn item__btn">Checkout </button>
+                          <button className="btn item__btn">Checkout </button>
                         </Link>
                       ) : (
-                          <FontAwesomeIcon
-                            icon="cart-shopping"
-                            className="CartShopping"
-                            onClick={() => addItemToBasket(ite)}
-                          />
+                        <FontAwesomeIcon
+                          icon="cart-shopping"
+                          className="CartShopping"
+                          onClick={() => addItemToBasket(ite)}
+                        />
                       )}
                     </div>
                   </div>
@@ -111,9 +110,8 @@ function Product({ collection, addToBasket }) {
           </div>
         </div>
       </section>
-      <div className="footer">
-        <Footer />
-      </div>
+
+      <Footer />
     </>
   );
 }

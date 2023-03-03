@@ -1,28 +1,25 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import landing from "../assets/landing.png";
 
 function Landing() {
   return (
     <div className="landing__wrapper">
       <h1 className="langing__title">
-        The Best <span className="orange">Shop</span> for all your{" "}
-        <span className="orange">Needs</span>
-      </h1>
-      <h1 className="langing__title-2">
-        and <span className="orange">Desires</span>{" "}
+        The Best <span className="orange">Shop</span> for all your Needs and <span className="orange">Desires</span>
       </h1>
       <div className="row">
         <img className="landing__img" src={landing} alt="" />
-        <a href="/">
+        <a href="/products">
           <div className="shirt"></div>
         </a>
-        <a href="">
+        <a href="/products">
           <div className="women__shirt"></div>
         </a>
-        <a href="">
+        <a href="/products">
           <div className="random"></div>
         </a>
-        <a href="">
+        <a href="/cart">
           <div className="cart"></div>
         </a>
 
@@ -31,10 +28,12 @@ function Landing() {
             <span className="orange">Categories:</span>{" "}
           </p>
           <div class="words">
+            <a href="/products">
             <span class="word">Jewelery</span>
             <span class="word">Women's clothing</span>
             <span class="word">Men's clothing</span>
             <span class="word">Electronics</span>
+            </a>
           </div>
         </div>
       </div>
