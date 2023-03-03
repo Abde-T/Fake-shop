@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function Feautured() {
+function Feautured({collection, addToBasket}) {
     const [collections, setCollections] = useState([]);
 
   async function getCollections() {
@@ -13,6 +13,20 @@ function Feautured() {
   useEffect(() => {
     getCollections();
   }, []);
+
+  const {id} = useParams();
+  const [added, SetAdded] = useState(false)
+
+    function addItemToBasket(addedItem){
+        SetAdded(true)
+        addToBasket(addedItem)
+    }
+
+    useEffect(() => {
+        window.scrollTo(0,0)
+        SetAdded(false)
+    }, [id])
+
 
   return (
     <section>
@@ -37,7 +51,14 @@ function Feautured() {
                     <div className="details">
                       <p className="items__info">${collection.price}</p>
                       <FontAwesomeIcon icon="heart" className="heart" />
+                      {
+                        added?
+                        
                       <FontAwesomeIcon icon="cart-shopping" className="CartShopping"/>
+                        
+                        :
+                        <FontAwesomeIcon icon="cart-shopping" className="CartShopping" onClick={() => addItemToBasket(collection)}/>
+                      }
                     </div>
                   </div>
                 </div>

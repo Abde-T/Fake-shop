@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logof.png' 
 
 function Nav() {
@@ -12,7 +13,9 @@ function Nav() {
                     <div className='nav__ele'>
                     <a href="/">Home</a>
                     <a href="/products">Explore</a>
+                    <Link to="/cart">
                     <FontAwesomeIcon icon="cart-shopping"/>
+                    </Link>
                     </div>
                 </div>
 
