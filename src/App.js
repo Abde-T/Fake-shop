@@ -9,10 +9,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Nav from "./component/Nav";
 import Footer from "./component/Footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 function App() {
-
+  AOS.init();
   const [basket, setBasket] = useState([]);
   const [collections, setCollections] = useState([]);
 
@@ -67,6 +69,7 @@ function App() {
 
 
   return (
+    
     <Router>
       <Nav numberOfItems={(numberOfItems())}/>
       <Routes>

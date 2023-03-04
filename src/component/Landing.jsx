@@ -5,11 +5,11 @@ import landing from "../assets/landing.png";
 function Landing() {
   return (
     <div className="landing__wrapper">
-      <h1 className="langing__title">
+      <h1 className="langing__title"  data-aos="fade-up"  data-aos-once="true" data-aos-delay="100">
         The Best <span className="orange">Shop</span> for all your Needs and <span className="orange">Desires</span>
       </h1>
       <div className="row">
-        <img className="landing__img" src={landing} alt="" />
+        <img className="landing__img" src={landing} alt="" data-aos="fade-up"  data-aos-once="true" />
         <a href="/products">
           <div className="shirt"></div>
         </a>
@@ -27,7 +27,7 @@ function Landing() {
           <p>
             <span className="orange">Categories:</span>{" "}
           </p>
-          <div class="words">
+          <div class="words" >
             <a href="/products">
             <span class="word">Jewelery</span>
             <span class="word">Women's clothing</span>

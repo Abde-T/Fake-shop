@@ -8,7 +8,7 @@ import Footer from "../component/Footer";
 
 function Products() {
   const [collections, setCollections] = useState([]);
-  const [index, setIndex] = useState(6);
+  const [index, setIndex] = useState(8);
   const [isCompleted, setIsCompleted] = useState(false);
   const initialPosts = slice(collections, 0, index);
 
@@ -33,7 +33,7 @@ function Products() {
   }
 
   const loadMore = () => {
-    setIndex(index + 3);
+    setIndex(index + 4);
     console.log(index);
     if (index >= collections.length) {
       setIsCompleted(true);
@@ -69,18 +69,15 @@ function Products() {
             {initialPosts.map((collection) => (
               <div className="product__info" key={collection.id}>
                 <Link to={`/products/${collection.id}`}>
-                  <img className="product__img" src={collection.image} alt="" />
+                  <img className="item__img" src={collection.image} alt="" />
                 </Link>
 
-                <div className="product__dtails">
+                <div className="details__wrapper">
                   <h3 className="items__title">{collection.title}</h3>
-                  <div className="products">
+                  <div className="details">
                     <p className="items__info">${collection.price}</p>
                     <FontAwesomeIcon icon="heart" className="heart" />
-                    <FontAwesomeIcon
-                      icon="cart-shopping"
-                      className="CartShopping"
-                    />
+              
                   </div>
                 </div>
               </div>

@@ -91,12 +91,6 @@ function Product({ items, addToBasket }) {
                     <div className="details">
                       <p className="items__info">${item.price}</p>
                       <FontAwesomeIcon icon="heart" className="heart" />
-
-                      <FontAwesomeIcon
-                        icon="cart-shopping"
-                        className="CartShopping"
-                        onClick={() => addItemToBasket(item)}
-                      />
                     </div>
                   </div>
                 </div>

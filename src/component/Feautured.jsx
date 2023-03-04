@@ -12,7 +12,7 @@ function Feautured() {
   }
   useEffect(() => {
     getCollections();
-  }, []);  
+  }, []);
 
   return (
     <section>
@@ -21,7 +21,12 @@ function Feautured() {
           <h1 className="section__title">
             Feautured <span className="orange">Items</span>
           </h1>
-          <div className="items__wrapper">
+          <div
+            className="items__wrapper"
+            data-aos="fade-up"
+            data-aos-once="true"
+            data-aos-delay="400"
+          >
             {collections
               .sort((a, b) => b.price - a.price)
               .slice(0, 4)
@@ -41,12 +46,6 @@ function Feautured() {
                     <div className="details">
                       <p className="items__info">${collection.price}</p>
                       <FontAwesomeIcon icon="heart" className="heart" />
-
-                      <FontAwesomeIcon
-                        icon="cart-shopping"
-                        className="CartShopping"
-                        
-                      />
                     </div>
                   </div>
                 </div>
