@@ -6,6 +6,22 @@
   font-family: 'Josefin Sans', sans-serif;
   
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #dbdfea
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff8800;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff7300;
+}
 :root{
 scroll-behavior: smooth;
 }
