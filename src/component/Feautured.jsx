@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 function Feautured() {
   const [collections, setCollections] = useState([]);
@@ -27,7 +28,8 @@ function Feautured() {
             data-aos-once="true"
             data-aos-delay="400"
           >
-            {collections
+            {
+            collections
               .sort((a, b) => b.price - a.price)
               .slice(0, 4)
               .map((collection) => (
@@ -49,7 +51,8 @@ function Feautured() {
                     </div>
                   </div>
                 </div>
-              ))}
+              ))
+            }
           </div>
         </div>
       </div>

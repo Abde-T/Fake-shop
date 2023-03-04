@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
+
 function Info() {
   return (
     <div className="info__sec-wrapper">

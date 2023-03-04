@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { slice } from "lodash";
-import Nav from "../component/Nav";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Footer from "../component/Footer";
 
 function Products() {
   const [collections, setCollections] = useState([]);
