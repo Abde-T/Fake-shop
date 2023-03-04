@@ -32,7 +32,6 @@ function Category(props) {
 
   return (
     <>
-      <Nav />
       <div className="gategory__wrapper">
         <div className="row">
           <div className="sort">
@@ -73,7 +72,6 @@ function Category(props) {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 }

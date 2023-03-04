@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../component/Nav";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link, useParams } from "react-router-dom";
-import Footer from "../component/Footer";
 
-function Product({ collection, addToBasket }) {
+function Product({ items, addToBasket }) {
   const { id } = useParams();
   const [collections, setCollections] = useState([]);
 
@@ -27,6 +25,9 @@ function Product({ collection, addToBasket }) {
     getitem();
   }, []);
 
+  const recommended = items
+    .filter((item) => item.category && +item.id !== +id)
+    .slice(0, 4);
   const [added, SetAdded] = useState(false);
 
   function addItemToBasket(addedItem) {
@@ -41,8 +42,6 @@ function Product({ collection, addToBasket }) {
 
   return (
     <>
-      <Nav />
-
       <div className="product__img--wrapper">
         <h1 className="prod">{collections.category}</h1>
       </div>
@@ -64,6 +63,7 @@ function Product({ collection, addToBasket }) {
                     <FontAwesomeIcon
                       icon="cart-shopping"
                       className="CartShopping"
+                      onClick={() => addItemToBasket(collections)}
                     />
                   </div>
                 </div>
@@ -77,31 +77,26 @@ function Product({ collection, addToBasket }) {
           <div className="row">
             <div className="sp">
               <h1 className="section__title">
-                Random <span className="orange">Items</span>
+                Recommended <span className="orange">Items</span>
               </h1>
             </div>
             <div className="items__wrapper">
-              {item.slice(0, 4).map((ite) => (
-                <div className="itm__info" key={ite.id}>
-                  <a href={`/products/${ite.id}`}>
-                    <img className="item__img" src={ite.image} alt="" />
+              {recommended.map((item) => (
+                <div className="itm__info" key={item.id}>
+                  <a href={`/products/${item.id}`}>
+                    <img className="item__img" src={item.image} alt="" />
                   </a>
                   <div className="details__wrapper">
-                    <h3 className="items__title">{ite.title}</h3>
+                    <h3 className="items__title">{item.title}</h3>
                     <div className="details">
-                      <p className="items__info">${ite.price}</p>
+                      <p className="items__info">${item.price}</p>
                       <FontAwesomeIcon icon="heart" className="heart" />
-                      {added ? (
-                        <Link to="/basket">
-                          <button className="btn item__btn">Checkout </button>
-                        </Link>
-                      ) : (
-                        <FontAwesomeIcon
-                          icon="cart-shopping"
-                          className="CartShopping"
-                          onClick={() => addItemToBasket(ite)}
-                        />
-                      )}
+
+                      <FontAwesomeIcon
+                        icon="cart-shopping"
+                        className="CartShopping"
+                        onClick={() => addItemToBasket(item)}
+                      />
                     </div>
                   </div>
                 </div>
@@ -110,8 +105,6 @@ function Product({ collection, addToBasket }) {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }

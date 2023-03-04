@@ -96,6 +96,16 @@ a{
   height: 205px;
   cursor: pointer;
 }
+
+.cart__length{
+  color: #ffffff;
+  border-radius: 50%;
+  text-align: center;
+  background-color: red;
+  width: 20px;
+  
+}
+
 .loader{
   position: absolute;
   top: 67%;

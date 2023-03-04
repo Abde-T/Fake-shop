@@ -1,8 +1,8 @@
 import React from "react";
-import Electronics from "./categories/Electronics";
-import Jewelery from "./categories/Jewelery";
-import MensClothing from "./categories/MensClothing";
-import WomensClothing from "./categories/WomensClothing";
+import Electronics from "./ui/Electronics";
+import Jewelery from "./ui/Jewelery";
+import MensClothing from "./ui/MensClothing";
+import WomensClothing from "./ui/WomensClothing";
 
 function Categories() {
   return (

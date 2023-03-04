@@ -9,12 +9,10 @@ import Nav from '../component/Nav';
 function home() {
     return (
         <>
-       <Nav/>
        <Landing/>
        <Info/>
        <Categories/>
        <Feautured/>
-       <Footer/>
         </>
     );
 }

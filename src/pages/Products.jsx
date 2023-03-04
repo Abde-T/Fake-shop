@@ -44,7 +44,7 @@ function Products() {
 
   return (
     <>
-      <Nav />
+
       <div className="products__img">
         <h1 className="prod">Products:</h1>
       </div>
@@ -106,7 +106,6 @@ function Products() {
         </div>
       </div>
 
-      <Footer />
     </>
   );
 }
