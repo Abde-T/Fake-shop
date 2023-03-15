@@ -9,7 +9,7 @@ function Categories() {
     <div className="Categories__sec-wrapper">
       <div className="row">
         <h1 className="section__title">Categories:</h1>
-        <div className="Categories__wrapper" data-aos="fade-up"  data-aos-once="true">
+        <div className="Categories__wrapper" data-aos="fade-up" data-aos-delay="100"  data-aos-once="true">
           <div className="M__cloth">
             <h2 className="catg__h2">Men's clothing: </h2>
             <MensClothing  />

@@ -43,16 +43,18 @@ function Product({ items, addToBasket }) {
   return (
     <>
       <div className="product__img--wrapper">
-        <h1 className="prod">{collections.category}</h1>
+        <h1 className="prod prod_w">{collections.category}</h1>
       </div>
       <div className="products__wrapper">
         <div className="row">
           <div className="product__wrapper">
             {
               <div className="prod__info">
+                <div className="prod__im">
                 <img className="prod__img" src={collections.image} alt="" />
+                </div>
                 <div className="prod__dtails">
-                  <h3 className="items__title">{collections.title}</h3>
+                  <h3 className="items__title item__title">{collections.title}</h3>
                   <div className="items__info">
                     <h3>Description:</h3>
                     <p>{collections.description}</p>
@@ -76,8 +78,8 @@ function Product({ items, addToBasket }) {
         <div className="wrapper">
           <div className="row">
             <div className="sp">
-              <h1 className="section__title">
-                Recommended <span className="orange">Items</span>
+              <h1 className="section__title sec__t ">
+                Recommended-<span className="orange"> Items</span>
               </h1>
             </div>
             <div className="items__wrapper">

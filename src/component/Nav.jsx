@@ -20,9 +20,9 @@ function Nav({ numberOfItems }) {
             </Link>
               {numberOfItems > 0 && (
                   <div className="cart__length">{numberOfItems}</div>
-                  )}
-                  
+                  )}   
           </div>
+         
         </div>
       </div>
     </nav>

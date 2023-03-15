@@ -26,7 +26,7 @@ function Feautured() {
             className="items__wrapper"
             data-aos="fade-up"
             data-aos-once="true"
-            data-aos-delay="400"
+            data-aos-delay="100"
           >
             {
             collections

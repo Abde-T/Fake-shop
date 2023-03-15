@@ -44,7 +44,7 @@ function Products() {
     <>
 
       <div className="products__img">
-        <h1 className="prod">Products:</h1>
+        <h1 className="prod prod_w">Products:</h1>
       </div>
       <div className="products__wrapper">
         <div className="row">

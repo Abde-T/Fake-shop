@@ -23,16 +23,16 @@ function Landing() {
           <div className="cart"></div>
         </a>
 
-        <div class="loader">
+        <div className="loader">
           <p>
             <span className="orange">Categories:</span>{" "}
           </p>
-          <div class="words" >
+          <div className="words" >
             <a href="/products">
-            <span class="word">Jewelery</span>
-            <span class="word">Women's clothing</span>
-            <span class="word">Men's clothing</span>
-            <span class="word">Electronics</span>
+            <span className="word">Jewelery</span>
+            <span className="word">Women's clothing</span>
+            <span className="word">Men's clothing</span>
+            <span className="word">Electronics</span>
             </a>
           </div>
         </div>
