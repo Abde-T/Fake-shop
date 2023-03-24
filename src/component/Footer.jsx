@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logof from '../assets/logo.png'
+import { Link } from 'react-router-dom';
 
 function Footer(props) {
     return (
@@ -8,9 +9,11 @@ function Footer(props) {
         <div className='row'>
             <div className='footer__elem'>
                 <img className='logo' src={logof} alt="" />
-                <a href="">Home</a>
-                <a href="">Explore</a>
-                <FontAwesomeIcon icon="cart-shopping"/>
+                <Link to="/">Home</Link>
+                <Link to="/products">Explore</Link>
+                <Link to="/cart">
+                     <FontAwesomeIcon icon="cart-shopping"/>
+                     </Link>
             </div>
             </div>
         </div>

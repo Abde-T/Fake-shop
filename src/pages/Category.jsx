@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Nav from "../component/Nav";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, Link } from "react-router-dom";
-import Footer from "../component/Footer";
 function Category(props) {
   const { category } = useParams();
   const [collections, setCollections] = useState([]);
@@ -23,11 +21,7 @@ function Category(props) {
       setCollections(collections.slice().sort((a, b) => a.price - b.price));
     } else if (filterValue === "HIGH_TO_LOW") {
       setCollections(collections.slice().sort((a, b) => b.price - a.price));
-    } else if (filterValue === "RATING") {
-      setCollections(
-        collections.slice().sort((a, b) => b.rating.rate - a.rating.rate)
-      );
-    }
+    } 
   }
 
   return (
@@ -46,7 +40,6 @@ function Category(props) {
               </option>
               <option value="LOW_TO_HIGH">Price, Low to High</option>
               <option value="HIGH_TO_LOW">Price, High to Low</option>
-              <option value="RATING">Rating</option>
             </select>
           </div>
           <div className="categ__wrapper">

@@ -27,10 +27,6 @@ function Electronics(props) {
           .slice()
           .sort((a, b) => (b.price.sale || b.price) - (a.price.sale || a.price))
       );
-    } else if (filterValue === "RATING") {
-      setCollections(
-        collections.slice().sort((a, b) => b.rating.rate - a.rating.rate)
-      );
     }
   }
 
