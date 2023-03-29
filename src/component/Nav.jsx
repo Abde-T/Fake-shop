@@ -1,9 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/logof.png";
+import Modal from "./ui/Modal";
 
 function Nav({ numberOfItems }) {
+  const [openMomdal, setOpenModal] = useState(false);
+
   return (
     <nav>
       <div className="row">
@@ -22,7 +25,11 @@ function Nav({ numberOfItems }) {
                   <div className="cart__length">{numberOfItems}</div>
                   )}   
           </div>
-         
+          <button className="btn__menu" onClick={() => {
+            setOpenModal(true)}}>
+          <FontAwesomeIcon icon="bars" />
+        </button>
+        {openMomdal && <Modal closeModal={setOpenModal} />}
         </div>
       </div>
     </nav>

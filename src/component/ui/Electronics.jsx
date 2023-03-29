@@ -35,8 +35,8 @@ function Electronics(props) {
       {collections
         .slice(0, 1)
         .map((collection) => (
-          <div className="catg__wrapper">
-            <div className="catg__info" key={collection.id}>
+          <div className="catg__wrapper" key={collection.id}>
+            <div className="catg__info" >
               <figure>
                 <img className="catg__img" src={collection.image} alt="" />
               </figure>

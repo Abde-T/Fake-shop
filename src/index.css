@@ -44,8 +44,10 @@ a{
   color: #ff9100;
 }
 .nav__ele{
+  position: relative;
   color: #ff9100;
   width: 200px;
+  margin: 0 20px 0 0;
   display: flex;
   justify-content: space-between;
 }
@@ -104,21 +106,20 @@ a{
   cursor: pointer;
 }
 .cart{
-  position: absolute;
-  top: 70%;
-  left: 52%;
-  transform: translate(-50%, -50%);
   width: 250px;
   height: 205px;
   cursor: pointer;
 }
 
 .cart__length{
+  position: absolute;
+  right: -10px;
+  top: -10px;
   color: #ffffff;
   border-radius: 50%;
   text-align: center;
-  background-color: red;
-  width: 20px;
+  background-color: #242424;
+  width: 18px;
   
 }
 
@@ -428,6 +429,54 @@ background-color: #242424;
 }
 
 
+.btn__menu{
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  text-align: center;
+  color:#e6713b;
+  display: none;
+}
+
+.menu__backdrop{
+  position: absolute;
+  background-color:#e6713bee;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 300ms ease;
+  opacity: 1;
+  max-height: 100vh;
+  box-shadow: 0 0 100px black inset;
+}
+
+.menu__list{
+  padding: 32px 0;
+}
+.menu__link{
+  font-size: 40px;
+  color: #242424;
+  text-decoration: none;
+}
+.menu__links{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.btn__menu--close{
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  padding: 8px;
+  color: #242424;
+}
+
+
 .price{
   color: rgb(255, 115, 0);
   font-size: 20px;
@@ -703,7 +752,14 @@ h4{
 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
+  .btn__menu{
+    margin: 0 10px 0 0;
+    display: block;
+  }
+  .nav__ele{
+    display: none;
+  }
   .product__info{
     margin: 5px auto;
     width: 49%;
@@ -759,7 +815,6 @@ h4{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 64.35vh;
 }
 
 .basket{
@@ -833,6 +888,7 @@ h4{
 .basket__item--remove{
   color: red;
   font-size: 12px;
+  cursor: pointer;
 }   
 
 .basket__price--container{
