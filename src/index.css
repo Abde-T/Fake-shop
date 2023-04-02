@@ -45,25 +45,31 @@ nav{
   justify-content: space-between;
 }
 a{
+  font-size: 24px;
   text-decoration: none;
   color: #cc063E;
   font-weight: 800;
 }
+ul{
+  display: flex;
+}
+li{
+  list-style: none;
+  margin: 0 20px;
+}
 .nav__ele{
   position: relative;
-  width: 200px;
-  margin: 0 20px 0 0;
   display: flex;
   justify-content: space-between;
 }
 .logo{
-  padding: 0 0 0 20px;
+  margin: 0 0 0 50px;
   scale: 1.8;
   width: 100px;
 }
 
 .langing__title{
-  margin-top: 200px;
+  margin: 280px 0 -50px 0;
   color: #242426;
   font-weight: 900;
 
@@ -105,7 +111,7 @@ a{
 
 .cart__length{
   position: absolute;
-  right: -10px;
+  right: 10px;
   top: -10px;
   color: #ffffff;
   border-radius: 50%;
@@ -537,16 +543,11 @@ background-color: #242424;
   background-color: #838383;
 }
 .product__img--wrapper{
-
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url(./assets/bg.png);
-  background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
   height: 300px;
-
 }
 .sort{
   margin: 30px 0;
@@ -654,6 +655,10 @@ h4{
   }
 }
 @media (max-width: 900px) {
+  .langing__title{
+    font-size:150%;
+    margin: 20px 0 0 0;
+  }
   .loader{
     font-size: 15px;
     top: 21.5%;
@@ -669,10 +674,7 @@ h4{
 
 
 @media (max-width: 620px) {
-  .langing__title{
-    font-size:100%;
-    margin: 20px 0 0 0;
-  }
+
   .loader{
     font-size: 15px;
     top: 21.5%;
@@ -741,20 +743,22 @@ h4{
     width: 200px;
   }
 
-}
-
-@media (max-width: 550px) {
-  .loader{
-    font-size: 15px;
-    top: 22.5%;
-    right: -7%;
+  .nav__ele{
+    display: none;
   }
   .btn__menu{
     margin: 0 10px 0 0;
     display: block;
   }
-  .nav__ele{
-    display: none;
+}
+
+
+@media (max-width: 550px) {
+  .loader{
+    font-size: 10px;
+    top: 22.5%;
+    scale: 0.9;
+    right: -10%;
   }
   .product__info{
     margin: 5px auto;
@@ -799,6 +803,17 @@ h4{
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .langing__title{
+    font-size:100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .loader{
+    scale: 0.8;
+    top: 21%;
+    right: -11%;
   }
 }
 

@@ -4,6 +4,7 @@ import landing from "../assets/landing.png";
 
 function Landing() {
   return (
+    <>
     <div className="landing__wrapper">
       <h1 className="langing__title"  data-aos="fade-up"  data-aos-once="true" data-aos-delay="100">
         The Best <span className="orange">Shop</span> for all your Needs and <span className="orange">Desires</span>
@@ -27,6 +28,7 @@ function Landing() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 
