@@ -42,19 +42,21 @@ function Product({ items, addToBasket }) {
 
   return (
     <>
-      <div className="product__img--wrapper">
-        <h1 className="prod prod_w">{collections.category}</h1>
+      <div className="margin">
       </div>
+        <h1 className="prod prod_w">{collections.category}</h1>
       <div className="products__wrapper">
         <div className="row">
           <div className="product__wrapper">
             {
               <div className="prod__info">
                 <div className="prod__im">
-                <img className="prod__img" src={collections.image} alt="" />
+                  <img className="prod__img" src={collections.image} alt="" />
                 </div>
                 <div className="prod__dtails">
-                  <h3 className="items__title item__title">{collections.title}</h3>
+                  <h3 className="items__title item__title">
+                    {collections.title}
+                  </h3>
                   <div className="items__info">
                     <h3>Description:</h3>
                     <p>{collections.description}</p>
@@ -62,11 +64,22 @@ function Product({ items, addToBasket }) {
                   <div className="products">
                     <p className="price">${collections.price}</p>
                     <FontAwesomeIcon icon="heart" className="heart" />
-                    <FontAwesomeIcon
-                      icon="cart-shopping"
-                      className="CartShopping"
-                      onClick={() => addItemToBasket(collections)}
-                    />
+                    {
+                                added
+                                ?
+                                <Link to="/cart">
+                                    <button className=" cart__btn">
+                                    Checkout
+                                    </button>
+                                </Link>
+                                :
+                                <FontAwesomeIcon
+                                icon="cart-shopping"
+                                className="CartShopping"
+                                onClick={() => addItemToBasket(collections)}
+                              />
+                            }          
+                    
                   </div>
                 </div>
               </div>
@@ -75,14 +88,12 @@ function Product({ items, addToBasket }) {
         </div>
       </div>
       <section>
-        <div className="wrapper">
-          <div className="row">
-            <div className="sp">
+        <div className="wrapper gray">
+          <div className="row ">
               <h1 className="section__title sec__t ">
-                Recommended-<span className="orange"> Items</span>
+              <span className="orange"> Recommended-Items</span>
               </h1>
-            </div>
-            <div className="items__wrapper">
+            <div className="items__wrapper ">
               {recommended.map((item) => (
                 <div className="itm__info" key={item.id}>
                   <a href={`/products/${item.id}`}>

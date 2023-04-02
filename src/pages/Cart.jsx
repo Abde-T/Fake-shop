@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import emptyBasketImg from "../assets/undraw_add_to_cart_re_wrdo.svg";
+import emptyBasketImg from "../assets/cart.png";
 import { Link } from "react-router-dom";
 import CartItems from "../component/ui/CartItems";
 
@@ -19,6 +19,8 @@ function Cart({ basket, changeQuantity, removeItem }) {
 
   return (
     <>
+      <div className="margin">
+      </div>
       <div className="items__body">
         <main className="items__main">
           <div className="container">
@@ -70,7 +72,7 @@ function Cart({ basket, changeQuantity, removeItem }) {
                       <span className="basket__price--title">Total</span>
                       <span className="basket__price--label">£{total}</span>
                     </div>
-                    <button className="f btn">
+                    <button className="not">
                       Proceed to Checkout
                     </button>
                   </div>

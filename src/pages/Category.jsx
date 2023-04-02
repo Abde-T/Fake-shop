@@ -26,6 +26,8 @@ function Category(props) {
 
   return (
     <>
+       <div className="margin">
+      </div>
       <div className="gategory__wrapper">
         <div className="row">
           <div className="sort">
@@ -53,10 +55,6 @@ function Category(props) {
                   <div className="details">
                     <p className="items__info">${collection.price}</p>
                     <FontAwesomeIcon icon="heart" className="heart" />
-                    <FontAwesomeIcon
-                      icon="cart-shopping"
-                      className="CartShopping"
-                    />
                   </div>
                 </div>
               </div>

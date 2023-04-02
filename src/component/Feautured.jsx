@@ -20,7 +20,7 @@ function Feautured() {
       <div className="Feautured__sec-wrapper">
         <div className="row">
           <h1 className="section__title">
-            Feautured <span className="orange">Items</span>
+             <span className="orange">Feautured Items</span>
           </h1>
           <div
             className="items__wrapper"
