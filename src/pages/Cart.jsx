@@ -49,6 +49,7 @@ function Cart({ basket, changeQuantity, removeItem }) {
                       src={emptyBasketImg}
                       alt=""
                       className="basket__empty--img"
+                      loading="lazy"
                     />
                     <h2>You don't have anything in your basket</h2>
                     <Link to="/products">

@@ -11,7 +11,7 @@ function Landing() {
       </h1>
       <div className="row">
         <div className="img__wrapper">
-        <img className="landing__img" src={landing} alt="" data-aos="fade-up"  data-aos-once="true" />
+        <img className="landing__img" src={landing} loading="lazy" alt="" data-aos="fade-up"  data-aos-once="true" />
         <div className="loader">
           <p>
            Categories:

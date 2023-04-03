@@ -429,7 +429,7 @@ background-color: #242424;
 .btn__menu{
   background-color: transparent;
   border: none;
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
   color:#cc063E;
   display: none;
@@ -651,7 +651,7 @@ h4{
   .loader{
     font-size: 20px;
     top: 21.5%;
-    right: 0%;
+    right: -6%;
   }
 }
 @media (max-width: 900px) {
@@ -659,10 +659,8 @@ h4{
     font-size:150%;
     margin: 20px 0 0 0;
   }
-  .loader{
-    font-size: 15px;
-    top: 21.5%;
-    right: 0%;
+  .loader p{
+    display: none;
   }
   .product__info{
     margin: 5px 0;
@@ -673,15 +671,13 @@ h4{
 }
 
 
-@media (max-width: 620px) {
+@media (max-width: 700px) {
 
-  .loader{
+
+  .words{ 
     font-size: 15px;
     top: 21.5%;
-    right: 0%;
-  }
-  .words{
-    font-size: 10px;
+    right: -3%;
   }
   .info__wrapper{
     flex-wrap: wrap;
@@ -753,12 +749,12 @@ h4{
 }
 
 
-@media (max-width: 550px) {
+@media (max-width: 560px) {
   .loader{
     font-size: 10px;
-    top: 22.5%;
+    top: 20.5%;
     scale: 0.9;
-    right: -10%;
+    right: -8%;
   }
   .product__info{
     margin: 5px auto;
