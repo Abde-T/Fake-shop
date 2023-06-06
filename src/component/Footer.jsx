@@ -8,7 +8,7 @@ function Footer(props) {
     <div className="footer__wrapper">
         <div className='row'>
             <div className='footer__elem'>
-                <img className='logo' src={logof} alt="" />
+                <img className='logo' src={logof} alt="" loading="lazy" />
                 <Link to="/">Home</Link>
                 <Link to="/products">Explore</Link>
                 <Link to="/cart">

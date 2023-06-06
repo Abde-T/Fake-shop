@@ -5,7 +5,7 @@ function CartItems({itemInfo, changeQuantity, removeItem}) {
         <div className="basket__item--row">
         <div className="basket__item">
             <div className="basket__item--wrapper">
-                <img src={itemInfo.image} className="basket__item--img" alt="" />
+                <img src={itemInfo.image} className="basket__item--img" loading="lazy" alt="" />
                 <div className="basket__item--info">
                     <span className="basket__item--title">{itemInfo.title}</span>
                     <span className="basket__item--price">{`£${(itemInfo.price).toFixed(2)}`}</span>

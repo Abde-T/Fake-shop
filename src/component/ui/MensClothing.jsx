@@ -20,7 +20,7 @@ function MensClothing(props) {
       {collections.slice(0, 1).map((collection) => (
         <div className="catg__wrapper" key={collection.id}>
           <div className="catg__info" >
-            <img className="catg__img" src={collection.image} alt="" />
+            <img className="catg__img" src={collection.image} loading="lazy" alt="" />
             <Link to={`/products/category/${collection.category}`}>
               <button className="catg__button">View More</button>
             </Link>

@@ -12,7 +12,7 @@ function Nav({ numberOfItems }) {
       <div className="row">
         <div className="nav__wrapper">
           <a href="/">
-            <img className="logo" src={logo} alt="" />
+            <img className="logo" src={logo} alt="" loading="lazy" />
           </a>
           <div className="nav__ele">
             <ul>

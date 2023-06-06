@@ -51,7 +51,7 @@ function Product({ items, addToBasket }) {
             {
               <div className="prod__info">
                 <div className="prod__im">
-                  <img className="prod__img" src={collections.image} alt="" />
+                  <img className="prod__img" src={collections.image} alt="" loading="lazy"/>
                 </div>
                 <div className="prod__dtails">
                   <h3 className="items__title item__title">
@@ -97,7 +97,7 @@ function Product({ items, addToBasket }) {
               {recommended.map((item) => (
                 <div className="itm__info" key={item.id}>
                   <a href={`/products/${item.id}`}>
-                    <img className="item__img" src={item.image} alt="" />
+                    <img className="item__img" src={item.image} alt="" loading="lazy"/>
                   </a>
                   <div className="details__wrapper">
                     <h3 className="items__title">{item.title}</h3>

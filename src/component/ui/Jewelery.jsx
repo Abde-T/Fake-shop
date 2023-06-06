@@ -25,7 +25,7 @@ function Jewelery(props) {
           <div className="catg__wrapper" key={collection.id}>
             <div className="catg__info" >
               <figure>
-                <img className="catg__img" src={collection.image} alt="" />
+                <img className="catg__img" src={collection.image} alt="" loading="lazy" />
               </figure>
               <Link to={`/products/category/${collection.category}`} >
               <button className="catg__button">View More</button>

@@ -48,7 +48,7 @@ function Category(props) {
             {collections.map((collection) => (
               <div className="item__info" key={collection.id}>
                 <Link to={`/products/${collection.id}`}>
-                  <img className="item__img" src={collection.image} alt="" />
+                  <img className="item__img" src={collection.image} alt="" loading="lazy"/>
                 </Link>
                 <div className="details__wrapper">
                   <h3 className="items__title">{collection.title}</h3>

@@ -651,7 +651,16 @@ h4{
   .loader{
     font-size: 20px;
     top: 21.5%;
-    right: -6%;
+    right: -2%;
+  }
+}
+@media (max-width: 1000px) {
+  .loader{
+    font-size: 20px;
+    right: 5%;
+  }
+  .loader p{
+    display: none;
   }
 }
 @media (max-width: 900px) {
@@ -661,6 +670,10 @@ h4{
   }
   .loader p{
     display: none;
+  }
+  .loader{
+    font-size: 18px;
+    right: 1%;
   }
   .product__info{
     margin: 5px 0;
@@ -672,7 +685,6 @@ h4{
 
 
 @media (max-width: 700px) {
-
 
   .words{ 
     font-size: 15px;
@@ -747,7 +759,14 @@ h4{
     display: block;
   }
 }
-
+@media (max-width: 650px) {
+  .loader{
+    font-size: 10px;
+    top: 20.5%;
+    scale: 0.9;
+    right: -5%;
+  }
+}
 
 @media (max-width: 560px) {
   .loader{
@@ -805,11 +824,11 @@ h4{
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 501px) {
   .loader{
-    scale: 0.8;
-    top: 21%;
-    right: -11%;
+    transform: scale(0.8);
+    top: 14%;
+    right: 8%;
   }
 }
 

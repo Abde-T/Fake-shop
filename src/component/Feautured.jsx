@@ -40,6 +40,7 @@ function Feautured() {
                         className="item__img"
                         src={collection.image}
                         alt=""
+                        loading="lazy"
                       />
                     </Link>
                   </figure>

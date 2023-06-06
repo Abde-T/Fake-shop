@@ -67,7 +67,7 @@ function Products() {
             {initialPosts.map((collection) => (
               <div className="product__info" key={collection.id}>
                 <Link to={`/products/${collection.id}`}>
-                  <img className="item__img" src={collection.image} alt="" />
+                  <img className="item__img" src={collection.image} alt="" loading="lazy"/>
                 </Link>
 
                 <div className="details__wrapper">
