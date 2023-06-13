@@ -2,10 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Jewelery(props) {
-    
-        const [collections, setCollections] = useState([]);
-
+const Jewelery = () => {
+  const [collections, setCollections] = useState([]);
   async function getCollections() {
     const { data } = await axios.get(
       "https://fakestoreapi.com/products/category/jewelery"

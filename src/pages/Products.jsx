@@ -8,41 +8,40 @@ function Products() {
   const [collections, setCollections] = useState([]);
   const [index, setIndex] = useState(8);
   const [isCompleted, setIsCompleted] = useState(false);
-  const initialPosts = slice(collections, 0, index);
 
   async function getCollections() {
-    const { data } = await axios.get("https://fakestoreapi.com/products");
-    setCollections(data);
+    const response = await axios.get("https://fakestoreapi.com/products");
+    setCollections(response.data);
   }
+
   useEffect(() => {
     getCollections();
   }, []);
 
   function filterProducts(filterValue) {
+    let sortedCollections = [];
     if (filterValue === "LOW_TO_HIGH") {
-      setCollections(collections.slice().sort((a, b) => a.price - b.price));
+      sortedCollections = collections.slice().sort((a, b) => a.price - b.price);
     } else if (filterValue === "HIGH_TO_LOW") {
-      setCollections(collections.slice().sort((a, b) => b.price - a.price));
+      sortedCollections = collections.slice().sort((a, b) => b.price - a.price);
     } else if (filterValue === "RATING") {
-      setCollections(
-        collections.slice().sort((a, b) => b.rating.rate - a.rating.rate)
-      );
+      sortedCollections = collections
+        .slice()
+        .sort((a, b) => b.rating.rate - a.rating.rate);
     }
+    setCollections(sortedCollections);
   }
 
   const loadMore = () => {
-    setIndex(index + 4);
-    console.log(index);
-    if (index >= collections.length) {
-      setIsCompleted(true);
-    } else {
-      setIsCompleted(false);
-    }
+    const newIndex = index + 4;
+    setIndex(newIndex);
+    setIsCompleted(newIndex >= collections.length);
   };
+
+  const initialPosts = slice(collections, 0, index);
 
   return (
     <>
-
       <div className="products__img">
         <h1 className="prod prod_w">Products:</h1>
       </div>
@@ -60,22 +59,24 @@ function Products() {
               </option>
               <option value="LOW_TO_HIGH">Price, Low to High</option>
               <option value="HIGH_TO_LOW">Price, High to Low</option>
-              
             </select>
           </div>
           <div className="product__wrapper">
             {initialPosts.map((collection) => (
               <div className="product__info" key={collection.id}>
                 <Link to={`/products/${collection.id}`}>
-                  <img className="item__img" src={collection.image} alt="" loading="lazy"/>
+                  <img
+                    className="item__img"
+                    src={collection.image}
+                    alt=""
+                    loading="lazy"
+                  />
                 </Link>
-
                 <div className="details__wrapper">
                   <h3 className="items__title">{collection.title}</h3>
                   <div className="details">
                     <p className="items__info">${collection.price}</p>
                     <FontAwesomeIcon icon="heart" className="heart" />
-              
                   </div>
                 </div>
               </div>
@@ -86,7 +87,7 @@ function Products() {
               <button
                 onClick={loadMore}
                 type="button"
-                className="btn  disabled"
+                className="btn disabled"
               ></button>
             ) : (
               <button
@@ -100,7 +101,6 @@ function Products() {
           </div>
         </div>
       </div>
-
     </>
   );
 }

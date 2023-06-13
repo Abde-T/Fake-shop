@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Modal({closeModal}) {
+const Modal = ({closeModal}) => {
     return (
         <>
         

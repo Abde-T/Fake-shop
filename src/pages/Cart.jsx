@@ -6,7 +6,8 @@ import CartItems from "../component/ui/CartItems";
 function Cart({ basket, changeQuantity, removeItem }) {
   useEffect(() => window.scrollTo(0, 0), []);
   const [total, setTotal] = useState(0);
-  const emptyBasket = basket.length > 0 ? false : true;
+  const emptyBasket = basket.length === 0;
+
   useEffect(() => {
     let price = 0;
     basket.forEach((item) => {
@@ -19,8 +20,7 @@ function Cart({ basket, changeQuantity, removeItem }) {
 
   return (
     <>
-      <div className="margin">
-      </div>
+      <div className="margin"></div>
       <div className="items__body">
         <main className="items__main">
           <div className="container">
@@ -32,16 +32,14 @@ function Cart({ basket, changeQuantity, removeItem }) {
                   <span className="basket__price">Price</span>
                 </div>
                 <div className="basket__items">
-                  {basket.map((item) => {
-                    return (
-                      <CartItems
-                        key={item.id}
-                        itemInfo={item}
-                        changeQuantity={changeQuantity}
-                        removeItem={removeItem}
-                      />
-                    );
-                  })}
+                  {basket.map((item) => (
+                    <CartItems
+                      key={item.id}
+                      itemInfo={item}
+                      changeQuantity={changeQuantity}
+                      removeItem={removeItem}
+                    />
+                  ))}
                 </div>
                 {emptyBasket && (
                   <div className="basket__empty">
@@ -61,7 +59,7 @@ function Cart({ basket, changeQuantity, removeItem }) {
                   <div className="basket__price--container">
                     <div className="basket__subtotal">
                       <span className="basket__price--title">Sub-Total</span>
-                      <span className="basket__price--label">£{subTotal}</span>
+                      <span className="basket__price--label">${subTotal}</span>
                     </div>
                     <div className="basket__tax">
                       <span className="basket__price--title">Tax</span>
@@ -71,11 +69,9 @@ function Cart({ basket, changeQuantity, removeItem }) {
                     </div>
                     <div className="basket__total">
                       <span className="basket__price--title">Total</span>
-                      <span className="basket__price--label">£{total}</span>
+                      <span className="basket__price--label">${total}</span>
                     </div>
-                    <button className="not">
-                      Proceed to Checkout
-                    </button>
+                    <button className="not">Proceed to Checkout</button>
                   </div>
                 )}
               </div>

@@ -3,24 +3,32 @@ import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 
-
-function Feautured() {
+const Feautured = () => {
   const [collections, setCollections] = useState([]);
 
-  async function getCollections() {
-    const { data } = await axios.get("https://fakestoreapi.com/products");
-    setCollections(data);
-  }
+  const getCollections = async () => {
+    try {
+      const response = await axios.get("https://fakestoreapi.com/products");
+      setCollections(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getCollections();
   }, []);
+
+  const featuredItems = collections
+    .sort((a, b) => b.price - a.price)
+    .slice(0, 4);
 
   return (
     <section>
       <div className="Feautured__sec-wrapper">
         <div className="row">
           <h1 className="section__title">
-             <span className="orange">Feautured Items</span>
+            <span className="orange">Featured Items</span>
           </h1>
           <div
             className="items__wrapper"
@@ -28,11 +36,7 @@ function Feautured() {
             data-aos-once="true"
             data-aos-delay="100"
           >
-            {
-            collections
-              .sort((a, b) => b.price - a.price)
-              .slice(0, 4)
-              .map((collection) => (
+            {featuredItems.map((collection) => (
                 <div className="item__info" key={collection.id}>
                   <figure>
                     <Link to={`/products/${collection.id}`}>
@@ -52,13 +56,12 @@ function Feautured() {
                     </div>
                   </div>
                 </div>
-              ))
-            }
+              ))}
           </div>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Feautured;

@@ -2,32 +2,34 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useParams, Link } from "react-router-dom";
+
 function Category(props) {
   const { category } = useParams();
   const [collections, setCollections] = useState([]);
 
-  async function getCollections() {
-    const { data } = await axios.get(
-      `https://fakestoreapi.com/products/category/${category}`
-    );
-    setCollections(data);
-  }
   useEffect(() => {
+    async function getCollections() {
+      const { data } = await axios.get(
+        `https://fakestoreapi.com/products/category/${category}`
+      );
+      setCollections(data);
+    }
     getCollections();
-  }, []);
+  }, [category]);
 
   function filterProducts(filterValue) {
+    const sortedCollections = [...collections];
     if (filterValue === "LOW_TO_HIGH") {
-      setCollections(collections.slice().sort((a, b) => a.price - b.price));
+      sortedCollections.sort((a, b) => a.price - b.price);
     } else if (filterValue === "HIGH_TO_LOW") {
-      setCollections(collections.slice().sort((a, b) => b.price - a.price));
-    } 
+      sortedCollections.sort((a, b) => b.price - a.price);
+    }
+    setCollections(sortedCollections);
   }
 
   return (
     <>
-       <div className="margin">
-      </div>
+      <div className="margin"></div>
       <div className="gategory__wrapper">
         <div className="row">
           <div className="sort">
@@ -48,7 +50,12 @@ function Category(props) {
             {collections.map((collection) => (
               <div className="item__info" key={collection.id}>
                 <Link to={`/products/${collection.id}`}>
-                  <img className="item__img" src={collection.image} alt="" loading="lazy"/>
+                  <img
+                    className="item__img"
+                    src={collection.image}
+                    alt=""
+                    loading="lazy"
+                  />
                 </Link>
                 <div className="details__wrapper">
                   <h3 className="items__title">{collection.title}</h3>
@@ -62,7 +69,6 @@ function Category(props) {
           </div>
         </div>
       </div>
-
     </>
   );
 }

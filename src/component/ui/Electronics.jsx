@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Electronics(props) {
+const Electronics = () => {
     const [collections, setCollections] = useState([]);
 
   async function getCollections() {

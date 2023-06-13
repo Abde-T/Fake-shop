@@ -4,8 +4,12 @@ import { Link } from "react-router-dom";
 import logo from "../assets/logof.png";
 import Modal from "./ui/Modal";
 
-function Nav({ numberOfItems }) {
-  const [openMomdal, setOpenModal] = useState(false);
+const Nav = ({ numberOfItems }) => {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
 
   return (
     <nav>
@@ -17,31 +21,29 @@ function Nav({ numberOfItems }) {
           <div className="nav__ele">
             <ul>
               <li>
-            <Link to="/">Home</Link>
+                <Link to="/">Home</Link>
               </li>
               <li>
-            <Link to="/products">Explore</Link>
+                <Link to="/products">Explore</Link>
               </li>
-                <li>
-
-            <Link to="/cart">
-              <FontAwesomeIcon icon="cart-shopping" className="cart_logo"/>
-            </Link>
-              {numberOfItems > 0 && (
-                <div className="cart__length">{numberOfItems}</div>
-                )}   
-                </li>
-                </ul>
+              <li>
+                <Link to="/cart">
+                  <FontAwesomeIcon icon="cart-shopping" className="cart_logo" />
+                </Link>
+                {numberOfItems > 0 && (
+                  <div className="cart__length">{numberOfItems}</div>
+                )}
+              </li>
+            </ul>
           </div>
-          <button className="btn__menu" onClick={() => {
-            setOpenModal(true)}}>
-          <FontAwesomeIcon icon="bars" />
-        </button>
-        {openMomdal && <Modal closeModal={setOpenModal} />}
+          <button className="btn__menu" onClick={handleModalOpen}>
+            <FontAwesomeIcon icon="bars" />
+          </button>
+          {openModal && <Modal closeModal={setOpenModal} />}
         </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Nav;

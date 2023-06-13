@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function WomensClothing(props) {
+const WomensClothing = () => {
   const [collections, setCollections] = useState([]);
 
   async function getCollections() {
