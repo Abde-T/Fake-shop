@@ -11,6 +11,7 @@ import Footer from "./component/Footer";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
+
 function App() {
   AOS.init();
   const [basket, setBasket] = useState([]);

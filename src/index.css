@@ -824,13 +824,22 @@ h4{
   }
 }
 
-@media (max-width: 501px) {
+@media (max-width: 450px) {
   .loader{
-    transform: scale(0.8);
-    top: 14%;
-    right: 8%;
+    transform: scale(0.7);
+    top: 13%;
+    right: 2%;
   }
 }
+@media (max-width: 375px) {
+  .loader{
+    transform: scale(0.6);
+    top: 12%;
+    right: 1%;
+  }
+}
+
+
 
 
 .items__body{
